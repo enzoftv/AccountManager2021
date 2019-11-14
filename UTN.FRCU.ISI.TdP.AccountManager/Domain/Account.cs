@@ -12,6 +12,8 @@ namespace UTN.FRCU.ISI.TdP.AccountManager.Domain
 
         public double OverdraftLimit { get; set; }
 
+        public virtual IList<AccountMovement> Movements { get; set; }
+
         public double GetBalance()
         {
             throw new NotImplementedException();

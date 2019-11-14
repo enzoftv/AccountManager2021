@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace UTN.FRCU.ISI.TdP.AccountManager.Domain
 {
@@ -10,6 +11,8 @@ namespace UTN.FRCU.ISI.TdP.AccountManager.Domain
         public String FirstName { get; set; }
 
         public String LastName { get; set; }
+
+        public virtual IList<Account> Accounts { get; set; }
 
     }
 }
