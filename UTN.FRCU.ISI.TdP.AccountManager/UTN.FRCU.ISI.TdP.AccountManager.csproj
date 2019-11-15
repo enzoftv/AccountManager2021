@@ -36,6 +36,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -57,6 +60,9 @@
     <Compile Include="DAL\EntityFramework\AccountManagerDbContext.cs" />
     <Compile Include="DAL\EntityFramework\AccountRepository.cs" />
     <Compile Include="DAL\EntityFramework\ClientRepository.cs" />
+    <Compile Include="DAL\EntityFramework\Mapping\AccountMap.cs" />
+    <Compile Include="DAL\EntityFramework\Mapping\AccountMovementMap.cs" />
+    <Compile Include="DAL\EntityFramework\Mapping\ClientMap.cs" />
     <Compile Include="DAL\EntityFramework\Repository.cs" />
     <Compile Include="DAL\EntityFramework\UnitOfWork.cs" />
     <Compile Include="DAL\IAccountRepository.cs" />
@@ -70,12 +76,29 @@
     <Compile Include="Domain\DocumentType.cs" />
     <Compile Include="IO\AccountDTO.cs" />
     <Compile Include="IO\AccountMovementDTO.cs" />
+    <Compile Include="Migrations\201911151341299_InitialCreate.cs" />
+    <Compile Include="Migrations\201911151341299_InitialCreate.designer.cs">
+      <DependentUpon>201911151341299_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911152124319_Client Document.cs" />
+    <Compile Include="Migrations\201911152124319_Client Document.designer.cs">
+      <DependentUpon>201911152124319_Client Document.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201911151341299_InitialCreate.resx">
+      <DependentUpon>201911151341299_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911152124319_Client Document.resx">
+      <DependentUpon>201911152124319_Client Document.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

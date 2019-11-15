@@ -47,7 +47,7 @@ namespace UTN.FRCU.ISI.TdP.AccountManager.DAL.EntityFramework
                 throw new ArgumentNullException(nameof(pEntity));
             }
 
-            this.iDbContext.Set<TEntity>().Attach(pEntity);
+            this.iDbContext.Set<TEntity>().Remove(pEntity);
         }
     }
 }
